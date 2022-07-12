@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #bord div {
+        border: 1px solid;
+        width: 200px;
+        height: 200px;
+        font-size: 100px;
+        line-height: 200px;
+        text-align: center;
+    }
+    #bord {
+        width: 600px;
+        border: 1px solid;
+        display: grid;
+        grid-template-columns: 200px 200px 200px;
+    }
+</style>
+<body>
+    <div id="bord">
+        <!-- <div class="masu1"></div>
+        <div class="masu2"></div>
+        <div class="masu3"></div>
+        <div class="masu4"></div>
+        <div class="masu5"></div>
+        <div class="masu6"></div>
+        <div class="masu7"></div>
+        <div class="masu8"></div>
+        <div class="masu9"></div> -->
+        <div class="masu"></div>
+        <div class="masu"></div>
+        <div class="masu"></div>
+        <div class="masu"></div>
+        <div class="masu"></div>
+        <div class="masu"></div>
+        <div class="masu"></div>
+        <div class="masu"></div>
+        <div class="masu"></div>
+    </div>
+
+    <script>
+        // 関数定義…引数としてクラスを取得して、実行する関数
+        // let count = 0;
+        // const createMaruBatsu = function(clsName){
+        //     const masuEl = document.querySelector(clsName);// クラスを指定する変数
+         
+        //     masuEl.addEventListener("click",function(){// ○を作る関数,クリックしたときに、動作するメソッド
+        //         if(count%2 === 0){
+        //             masuEl.textContent = "○"
+        //         }
+        //         else if (count%2 === 1){
+        //             masuEl.textContent = "×";
+        //         }
+        //         console.log(count)
+        //         count++;
+        //     })
+        // }
+
+        // console.log(document.querySelectorAll("div div").item(1))
+        // document.querySelectorAll("div div").item(1).textContent = "AAA"        
+        
+
+        // // 関数の実行…引数として、クラス名を渡している
+        // createMaruBatsu(".masu1");
+        // createMaruBatsu(".masu2");
+        // createMaruBatsu(".masu3");
+        // createMaruBatsu(".masu4");
+        // createMaruBatsu(".masu5");
+        // createMaruBatsu(".masu6");
+        // createMaruBatsu(".masu7");
+        // createMaruBatsu(".masu8");
+        // createMaruBatsu(".masu9");
+        
+
+// querySelectorAllで全ての要素を指定
+        // 配列を定義
+        const masuArray = ["1","2","3","4","5","6","7","8","9"];
+        let count = 0;// 関数の外で宣言しないと、呼び出される度に0から始まる
+        // 関数宣言…引数として、行番号を受け取る
+        const createMaruBatsu = function(i){
+            const masuEl = document.querySelectorAll(".masu").item(i);// クラスを指定する変数
+            // クリックしたときに、○×を作る関数
+            masuEl.addEventListener("click",function(){
+                if(count%2 === 0){
+                    masuEl.textContent = "○";
+                }
+                else if (count%2 === 1){
+                    masuEl.textContent = "×";
+                }
+                console.log(count + " 回目")
+                count++;
+                masuArray[i] = masuEl.textContent;// 配列の添え字の番号に、クリックしたときのテキストを代入
+                console.log(masuArray);// クリックされた時の、配列の中身を表示
+            })
+        }
+        
+        
+
+        // 関数の実行…行番号の0～8をfor文で取得し、引数として渡す
+        for(let i = 0; i < 9;i++){
+           createMaruBatsu(i);
+        }
+
+       
+       
+       
+
+        
+       
+        // createMaruBatsu(".masu",1);
+        // createMaruBatsu(".masu",2);
+        // createMaruBatsu(".masu",3);
+        // createMaruBatsu(".masu",4);
+        // createMaruBatsu(".masu",5);
+        // createMaruBatsu(".masu",6);
+        // createMaruBatsu(".masu",7);
+        // createMaruBatsu(".masu",8);
+   
+
+        // const masuEl = document.querySelector(clsName);//クラスを指定する変数
+        // const changeMaru = function(){//○を作る関数
+        //     masuEl.textContent = "○";
+        // }
+        // masuEl.addEventListener("click",changeMaru)//クリックしたときに○を作る文
+
+        
+        
+        // const clsName2 = document.querySelector(".masu2");//クラスを指定する変数
+        // const createMaru2 = function(){//○を作る関数
+        //     clsName2.textContent = "○";
+        // }
+        // clsName2.addEventListener("click",createMaru2)//クリックしたときに○を作る文
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

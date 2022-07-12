@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+            background-color: rgb(34, 156, 116);
+        }
+
+        #board {
+            /* background-color: aquamarine; */
+            margin: 0 auto 0 auto;
+            width: 850px;
+            height: 650px;
+            display: grid;
+            grid-template-columns: repeat(13, 1fr);
+            gap: 2px;
+        }
+
+        .cards {
+            background-color: azure;
+            width: 80px;
+            height: 130px;
+            font-size: 50px;
+            line-height: 130px;
+            text-align: center;
+            /* background-image: url("cards/card_back.png" ); */
+        }
+
+        img {
+            width: 80px;
+            height: 130px;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        const boardDiv = document.createElement("div");
+        document.body.prepend(boardDiv);
+        boardDiv.setAttribute("id", "board");
+
+        // トランプの枚数分の枠を作成
+        // <div id = board> <div class = cards > </div> </div>
+        for (let i = 0; i < 52; i++) {
+            const cardsDiv = document.createElement("div");
+            document.querySelector("#board").prepend(cardsDiv);
+            cardsDiv.setAttribute("class", "cards");
+            
+        }
+
+        for (let i = 0; i < 52; i++){
+            document.querySelectorAll("div .cards").item(i).textContent = i;
+        }
+
+        // さらに52個のdivの中にimg要素を挿入
+        // <div id = board> <div class = cards > <img src = "cards/card_back.png"> </div> </div>
+        // for (let i = 0; i < 52; i++) {
+        //     const backImg = document.createElement("img");
+        //     document.querySelectorAll(".cards").item(i).prepend(backImg);
+        //     backImg.setAttribute("src", "cards/card_back.png");
+        //     document.querySelectorAll("img").item(i).setAttribute("class", "images")
+        //     // document.querySelectorAll(".cards").item(i).textContent = i;
+        // }
+    </script>
+</body>
+</html>

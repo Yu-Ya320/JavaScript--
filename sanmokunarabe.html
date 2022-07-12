@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #bord div {
+        border: 1px solid;
+        width: 200px;
+        height: 200px;
+        font-size: 100px;
+        line-height: 200px;
+        text-align: center;
+    }
+    #bord {
+        display: grid;
+        grid-template-columns: 200px 200px 200px;
+    }
+</style>
+<body>
+    <div id="bord">
+        <div class="masu1">1</div>
+        <div class="masu2">2</div>
+        <div class="masu3">3</div>
+        <div class="masu4">4</div>
+        <div class="masu5">5</div>
+        <div class="masu6">6</div>
+        <div class="masu7">7</div>
+        <div class="masu8">8</div>
+        <div class="masu9">9</div>
+    </div>
+
+    <script>
+        // 関数定義…引数としてクラスを取得して、実行する関数
+        const createMaru = function(clsName){
+            const masuEl = document.querySelector(clsName);// クラスを指定する変数
+            const changeMaru = function(){// ○を作る関数
+                masuEl.textContent = "○"
+            }
+            masuEl.addEventListener("click",changeMaru)// クリックしたときに、動作するメソッド
+        }
+
+        // 関数の実行…引数として、クラス名を渡している
+        createMaru(".masu1");
+        createMaru(".masu2");
+        createMaru(".masu3");
+        createMaru(".masu4");
+        createMaru(".masu5");
+        createMaru(".masu6");
+        createMaru(".masu7");
+        createMaru(".masu8");
+        createMaru(".masu9");
+
+        // const masuEl = document.querySelector(clsName);//クラスを指定する変数
+        // const changeMaru = function(){//○を作る関数
+        //     masuEl.textContent = "○";
+        // }
+        // masuEl.addEventListener("click",changeMaru)//クリックしたときに○を作る文
+
+        
+        
+        // const clsName2 = document.querySelector(".masu2");//クラスを指定する変数
+        // const createMaru2 = function(){//○を作る関数
+        //     clsName2.textContent = "○";
+        // }
+        // clsName2.addEventListener("click",createMaru2)//クリックしたときに○を作る文
+
+    </script>
+</body>
+</html>
